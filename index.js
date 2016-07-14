@@ -4,7 +4,7 @@ export default class CouchbasePro {
     constructor(deps, config = {}) {
         this._couchbase = deps.couchbase || require('couchbase');
         this._cluster = new this._couchbase.Cluster(config.cluster);
-        this._N1qlQuery = this._couchbase.N1qlQuery;
+        this.N1qlQuery = this._couchbase.N1qlQuery;
         this.bucket = this._cluster.openBucket(config.bucket, config.password);
         Object.assign(this.bucket, config.timeouts);
     }
