@@ -1,7 +1,7 @@
 'use strict'
 
-export default class CouchbasePro {
-    constructor(deps, config = {}) {
+export default class CouchnodePro {
+    constructor(config = {}, deps) {
         this._couchbase = deps.couchbase || require('couchbase');
         this._cluster = new this._couchbase.Cluster(config.cluster);
         this.N1qlQuery = this._couchbase.N1qlQuery;

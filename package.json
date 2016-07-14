@@ -1,10 +1,12 @@
 {
   "name": "couchnode-pro",
-  "version": "1.0.0",
-  "description": "Couchbase for node using promises requires couchnode 2.0.0",
-  "main": "index.js",
+  "version": "1.0.2",
+  "description": "Couchbase for node using promises",
+  "main": "./build/1.0.2/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && git tag $PACKAGE_VERSION && git push --tags",
+    "build": "PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && echo $PACKAGE_VERSION && babel index.js -d ./build/$PACKAGE_VERSION"
   },
   "repository": {
     "type": "git",
@@ -13,6 +15,7 @@
   "keywords": [
     "couchnode",
     "promise",
+    "promises",
     "couchbase",
     "nosql"
   ],
@@ -23,7 +26,12 @@
   },
   "homepage": "https://github.com/exZ/couchnode-promise#readme",
   "dependencies": {
-    "couchbase": "^2.2.1",
-    "couchnode": "^4.3.4"
+    "couchbase": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0"
   }
 }
