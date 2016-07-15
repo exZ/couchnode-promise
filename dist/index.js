@@ -11,7 +11,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var CouchnodePro = function () {
     function CouchnodePro() {
         var config = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-        var deps = arguments[1];
+        var deps = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
         _classCallCheck(this, CouchnodePro);
 
