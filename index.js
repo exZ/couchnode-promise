@@ -36,9 +36,9 @@ var CouchnodePro = function () {
 
                 (_bucket = _this.bucket)[m].apply(_bucket, a.concat([function (e, r) {
                     if (e) {
-                        return f(e);
+                        f(e);
                     } else {
-                        return o(r);
+                        o(r);
                     }
                 }]));
             });
