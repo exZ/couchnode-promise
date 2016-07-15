@@ -1,6 +1,6 @@
 {
   "name": "couchnode-pro",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Couchbase for node using promises",
   "main": "./dist/index.js",
   "scripts": {
